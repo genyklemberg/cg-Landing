@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 import {Team} from '../shared/team';
-import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 @Injectable()
 export class TeamsService {
 
   teams: FirebaseListObservable<Team[]>;
-  team: FirebaseObjectObservable<Team>;
+  team: Observable<Team>;
 
   constructor(private db: AngularFireDatabase) {
-    this.teams = this.db.list('/teams');
+    this.teams = db.list('/teams');
   }
 
   // getTeams(itemNumber?: number, startAt?: Object ): FirebaseListObservable<any>{
@@ -29,25 +30,25 @@ export class TeamsService {
   //   return this.teams;
   // }
 
-  addTeam(team: Team) {
-    this.teams.push(this.convertTeam(team));
-  }
-
-  updateTeam(key: string, team: Team) {
-    this.teams.update(key, this.convertTeam(team));
-  }
-
-  deleteTeam(key: string) {
-    this.teams.remove(key);
-  }
-
-  deleteAll() {
-    this.teams.remove();
-  }
+  // addTeam(team: Team) {
+  //   this.teams.push(this.convertTeam(team));
+  // }
+  //
+  // updateTeam(key: string, team: Team) {
+  //   this.teams.update(key, this.convertTeam(team));
+  // }
+  //
+  // deleteTeam(key: string) {
+  //   this.teams.remove(key);
+  // }
+  //
+  // deleteAll() {
+  //   this.teams.remove();
+  // }
 
   // convert date to string, Firebase cannot save Date object!
   private convertTeam(team: Team): Object {
-    let obj = {};
+    const obj = {};
     for (let prop in team) {
       if (prop === 'date') {
         obj[prop] = team[prop].toUTCString();
@@ -69,7 +70,7 @@ export class TeamsService {
   //   new Team ( 6, 'OG.Dota', '../../assets/img/team/OG.png', 'OGDota2', 5, 20, 5)
   // ];
 
-  getTeams(): FirebaseListObservable<Team[]> {
+  getTeams(): Observable<Team[]> {
     return this.teams = this.db.list('/teams', { query: { orderByChild: '/ranking', startAt: false }});
   }
 

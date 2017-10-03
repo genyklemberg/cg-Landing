@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 import { User } from '../shared/user';
-import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 @Injectable()
 export class SubscriberService {
 
   users: FirebaseListObservable<User[]>;
-  user: FirebaseObjectObservable<User>;
+  user: Observable<User>;
 
   constructor(private db: AngularFireDatabase) {
-    this.users = this.db.list('/users');
+    this.users = db.list('/users');
   }
 
   addNewUser(user: User) {

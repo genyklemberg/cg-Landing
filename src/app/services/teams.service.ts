@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import {Team} from '../shared/team';
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import {AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable} from 'angularfire2/database';;
 
 @Injectable()
 export class TeamsService {
 
   teams: FirebaseListObservable<Team[]>;
-  team: Observable<Team>;
+  team: FirebaseObjectObservable<Team>;
 
   constructor(private db: AngularFireDatabase) {
-    this.teams = db.list('/teams');
+    this.teams = this.db.list('/teams');
   }
 
   // getTeams(itemNumber?: number, startAt?: Object ): FirebaseListObservable<any>{
@@ -49,7 +49,7 @@ export class TeamsService {
   // convert date to string, Firebase cannot save Date object!
   private convertTeam(team: Team): Object {
     const obj = {};
-    for (let prop in team) {
+    for (const prop in team) {
       if (prop === 'date') {
         obj[prop] = team[prop].toUTCString();
       } else {
@@ -70,7 +70,7 @@ export class TeamsService {
   //   new Team ( 6, 'OG.Dota', '../../assets/img/team/OG.png', 'OGDota2', 5, 20, 5)
   // ];
 
-  getTeams(): Observable<Team[]> {
+  getTeams(): FirebaseListObservable<Team[]> {
     return this.teams = this.db.list('/teams', { query: { orderByChild: '/ranking', startAt: false }});
   }
 

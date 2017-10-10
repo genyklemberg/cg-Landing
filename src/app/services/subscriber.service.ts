@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { User } from '../shared/user';
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import {
+  AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable
+} from 'angularfire2/database';
 
 @Injectable()
 export class SubscriberService {
 
   users: FirebaseListObservable<User[]>;
-  user: Observable<User>;
+  user: FirebaseObjectObservable<User>;
 
   constructor(private db: AngularFireDatabase) {
     this.users = db.list('/users');
@@ -18,9 +20,9 @@ export class SubscriberService {
   }
 
   // convert date to string, Firebase cannot save Date object!
-  private convertUser (user: User): Object {
-    let obj = {};
-    for (let prop in user) {
+  private convertUser (user: User) {
+    const obj = {};
+    for (const prop in user) {
       if (prop === 'date'){
         obj[prop] = user[prop].toUTCString();
       } else {

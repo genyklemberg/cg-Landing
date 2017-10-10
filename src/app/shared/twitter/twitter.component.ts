@@ -3,9 +3,9 @@ import {ActivatedRoute, Params} from '@angular/router';
 import {TeamsService} from '../../services/teams.service';
 
 
-import {Team} from 'app/shared/team';
-import {Ng4TwitterTimelineService} from 'ng4-twitter-timeline/lib';
-import {Subscription} from 'rxjs';
+import {Team} from '../team';
+import {Ng4TwitterTimelineService} from 'ng4-twitter-timeline/src';
+import {Subscription} from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-twitter',

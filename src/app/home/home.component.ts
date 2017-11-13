@@ -2,8 +2,9 @@ import { Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {AngularFireDatabase} from 'angularfire2/database';
 import {SubscriberService} from '../services/subscriber.service';
-import {User} from 'app/shared/user';
+import {User} from '../shared/user';
 import { trigger, state, style, transition, animate} from '@angular/animations';
+import {Meta, Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -35,7 +36,45 @@ export class HomeComponent implements OnInit {
   state = 'show';
   submit = false;
 
-  constructor(private subscriberService: SubscriberService) { }
+  constructor(private subscriberService: SubscriberService, private meta: Meta, private title: Title) {
+    title.setTitle('Cyber Gates | Your 1st Step in Gaming World');
+    meta.addTags([
+      {
+        name: 'url', content: 'https://www.cybergates.gg'
+      },
+      {
+        name: 'description', content: 'A Major Gaming hub for new and pro players. ' +
+      'No matter what games you play Dota2, Lol, CS:GO, PUBG, HotS, FIFA, Heartstone or some others you\'ll definitely find something' +
+      'for your needs'
+      },
+      {
+        name: 'image', content: 'https://cybergates.gg/assets/img/logo.jpg'
+      },
+      {
+        name: 'og:url', content: 'https://www.cybergates.gg'
+      },
+      {
+        name: 'og:type', content: 'website'
+      },
+      {
+        name: 'og:title', content: 'Cyber Gates | Your 1st Step in Gaming World'
+      },
+      {
+        name: 'og:description', content: 'A Major Gaming hub for new and pro players. ' +
+      'No matter what games you play Dota2, Lol, CS:GO, PUBG, HotS, FIFA, Heartstone or some others you\'ll definitely find something' +
+      'for your needs'
+      },
+      {
+        name: 'og:image', content: 'https://cybergates.gg/assets/img/logo.jpg'
+      },
+      {
+        name: 'og:image:width', content: '1200'
+      },
+      {
+        name: 'og:image:height', content: '600'
+      }
+    ])
+  }
 
   ngOnInit() {
     this.subscribeForm = new FormGroup({
@@ -89,5 +128,17 @@ export class HomeComponent implements OnInit {
   myAnime() {
     this.state = (this.state === 'show' ? 'hide' : 'show');
   }
+
+  // scrollToTop(event) {
+  //   (function smoothscroll(): void {
+  //     event.preventDefault();
+  //
+  //     let currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+  //     if (currentScroll > 0) {
+  //       window.requestAnimationFrame(smoothscroll);
+  //       window.scrollTo(0, currentScroll - (currentScroll / 10));
+  //     }
+  //   })();
+  // }
 
 }

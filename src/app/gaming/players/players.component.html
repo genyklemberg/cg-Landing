@@ -1,0 +1,66 @@
+<header class="pager">
+  <div class="pager-body">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-6">
+          <h4><span class="brand-font">World Dota2 pro-players</span></h4>
+           <!--Table-->
+          <!--<div *ngIf="!router.url.includes('map') || screenSize > 700" class="table-responsive scrollingTable">-->
+          <!--<div class='row regions'>-->
+            <!--<div class='col-lg-3'><h6>America</h6></div>-->
+            <!--<div class='col-lg-3'><h6>Asia</h6></div>-->
+            <!--<div class='col-lg-3'><h6>China</h6></div>-->
+            <!--<div class='col-lg-3'><h6>Europe</h6></div>-->
+          <!--</div>-->
+            <div class="row search">
+              <div class="col-md-6 col-md-offset-3">
+                <form action="" class="search-form">
+                  <div class="form-group has-feedback">
+                    <label for="search" class="sr-only">Search</label>
+                    <input type="text"
+                           class="form-control"
+                           name="search"
+                           id="search"
+                           placeholder="search by nickname"
+                           (focus)="search($event)"
+                           (keyup)="search($event)"
+                    >
+                    <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                  </div>
+                </form>
+              </div>
+            </div>
+          <div class="table-responsive scrollingTable">
+            <table class="table" id='myTable'>
+              <thead>
+              <tr>
+                <th class="col-xs-4">Region</th>
+                <th class="col-xs-4">Name</th>
+                <th class="col-xs-4">Nick</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let player of players" routerLinkActive='active' [routerLink]="[player.twitter]" style='cursor: pointer'>
+                <td>{{ player.region }}</td>
+                <!--<td><img-->
+                  <!--[src]="player.region_href"-->
+                  <!--alt="{{ player.nick }}"></td>-->
+                <td>{{ player.name }}</td>
+                <td ><a>
+                  {{ player.nick }}
+                </a></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="mobFinger"><i class="fa fa-gg-circle"></i></div>
+        <div class="col-md-6">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+

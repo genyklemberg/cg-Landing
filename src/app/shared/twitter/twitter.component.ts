@@ -14,16 +14,17 @@ import {Subscription} from 'rxjs/Subscription';
   providers: [Ng4TwitterTimelineService]
 })
 export class TwitterComponent implements OnInit {
-  @Input() id: number;
-  selectedTeam: Team = {
-    id: undefined,
-    title: 'Cyber Gates',
-    imgPath: undefined,
-    twitter: 'cybergates_gg',
-    ranking: 1,
-    wins: 1,
-    looses: 0
-  };
+  @Input() twitter: string;
+  selectedTwitter;
+  // selectedTeam: Team = {
+  //   id: undefined,
+  //   title: 'Cyber Gates',
+  //   imgPath: undefined,
+  //   twitter: 'cybergates_gg',
+  //   ranking: 1,
+  //   wins: 1,
+  //   looses: 0
+  // };
   showTw;
   private subscription: Subscription;
 
@@ -35,19 +36,22 @@ export class TwitterComponent implements OnInit {
 
 
   ngOnInit() {
-
     this.route.params
       .subscribe(
         (params: Params) => {
           this.showTw = false;
-          this.id = +params['id'];
-          if (this.id >= 0) {
-            this.subscription = this.teamsService.getTeam(this.id)
-              .subscribe(team => this.selectedTeam = team);
+          if (params['twitter']) {
+            this.selectedTwitter = params['twitter'];
+          } else {
+            this.selectedTwitter = 'cybergates_gg';
           }
-
-          setTimeout(() => this.showTw = true, 0)
-
+          // this.twitter = params['twitter'];
+          // if (this.twitter !== '') {
+          //   this.selectedTwitter = this.twitter;
+          //   // this.subscription = this.teamsService.getTeam(this.id)
+          //   //   .subscribe(team => this.selectedTwitter = team);
+          // }
+            setTimeout(() => this.showTw = true, 0)
         }
       );
   }

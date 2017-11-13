@@ -106,6 +106,15 @@ a:hover .network-name{
 .navbar-custom .nav li.active a:hover {
   color: white;
 }
+
+.dropdown-menu li:hover .sub-menu {
+  visibility: visible;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
 @media (min-width: 768px) {
   .navbar-custom {
     padding: 20px 0;
@@ -187,6 +196,13 @@ th {
 table.myTable {
   border-collapse: collapse;
 }
+
+tbody {
+  height: 100px;       /* Just for the demo          */
+  overflow-y: auto;    /* Trigger vertical scroll    */
+  overflow-x: hidden;  /* Hide the horizontal scroll */
+}
+
 .scrollingTable {
   height: 250px;
   overflow: auto;
@@ -205,9 +221,31 @@ table.myTable {
   outline: 1px solid slategrey;
 }
 
+/*.regions {*/
+  /*padding: 0 10px;*/
+/*}*/
+
+/*.regions h6 {*/
+  /*text-align: center;*/
+  /*color: darkgrey;*/
+  /*background-color: black;*/
+  /*border: 2px solid #1b6d85;*/
+  /*padding: 5px;*/
+/*}*/
+
+/*.regions h6:hover {*/
+  /*background-color: #1b6d85;*/
+  /*color: white;*/
+/*}*/
+
+.row .search {
+  color: #649aca;
+}
+
 .pager .pager-body .pager-text {
   font-size: 18px;
 }
+
 @media (min-width: 768px) {
   .pager {
     height: 100%;
@@ -501,13 +539,22 @@ em#form-label {
   display: none;
   height: 30px;
 }
-@media (max-width: 767px) {
+
+.col button[disabled] {
+  background-color: #9d9d9d;
+}
+
+@media (max-width: 800px) {
   span.brand-logo, h3 a {
     font-size: 0.9em;
    }
 
   h4 span {
     font-size: 1.1em;
+  }
+  .col button {
+    width: 80%;
+    margin-bottom: 5px;
   }
 
   h2 {

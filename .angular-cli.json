@@ -23,6 +23,8 @@
         "styles.css"
       ],
       "scripts": [
+        "./assets/vendor/jquery/jquery.min.js",
+        "./assets/vendor/bootstrap/js/bootstrap.js",
         "./assets/js/grayscale.min.js"
       ],
       "environmentSource": "environments/environment.ts",

@@ -13,34 +13,27 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
       <ul class="nav navbar-nav">
-        <li class="hidden">
-          <a href="#page-top"></a>
+        <li class="hidden" id='pageTop'>
         </li>
-        <li *ngIf="router.url !== '/' && router.url !== '/#about' && router.url !== '/#download' && router.url !== '/#contact'">
+        <li *ngIf="router.url !== '/'">
           <a href='gohome'>Home</a>
         </li>
-        <li *ngIf="router.url === '/' || router.url === '/#about' || router.url === '/#download' || router.url === '/#contact'">
-          <a class="page-scroll" href="#about">About</a>
+        <li *ngIf="router.url === '/'">
+          <a class="page-scroll" [ngx-scroll-to]="'about'">About</a>
         </li>
-        <li *ngIf="router.url === '/' || router.url === '/#about' || router.url === '/#download' || router.url === '/#contact'">
-          <a class="page-scroll" href="#download">Invitation</a>
+        <li *ngIf="router.url === '/'">
+          <a class="page-scroll" [ngx-scroll-to]="'download'">Invitation</a>
         </li>
-        <li *ngIf="router.url === '/' || router.url === '/#about' || router.url === '/#download' || router.url === '/#contact'">
-          <a class="page-scroll" href="#contact">Contact</a>
+        <li *ngIf="router.url === '/'">
+          <a class="page-scroll" [ngx-scroll-to]="'contact'">Contact</a>
         </li>
-        <li routerLinkActive='active' ><a routerLink="/teams//dota2/rankings">Dota2</a></li>
-        <!--<li class="dropdown" appDropdown>-->
-        <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>-->
-        <!--<ul class="dropdown-menu">-->
-        <!--<li><a href="#">Action</a></li>-->
-        <!--<li><a href="#">Another action</a></li>-->
-        <!--<li><a href="#">Something else here</a></li>-->
-        <!--<li role="separator" class="divider"></li>-->
-        <!--<li><a href="#">Separated link</a></li>-->
-        <!--<li role="separator" class="divider"></li>-->
-        <!--<li><a href="#">One more separated link</a></li>-->
-        <!--</ul>-->
-        <!--</li>-->
+        <!--<li routerLinkActive='active' ><a routerLink="/pro-teams/dota2/rankings/TeamLiquid">Dota2</a></li>-->
+        <li class="dropdown" appDropdown>
+        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dota 2<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+        <li routerLinkActive='active'><a routerLink="/pro-teams/dota2/rankings/TeamLiquid">Teams</a></li>
+        <li routerLinkActive='active'><a routerLink="/pro-players/dota2/rankings/Liquid_Miracle">Players</a></li>
+        </ul>
       </ul>
       <!--<form class="navbar-form navbar-left">-->
       <!--<div class="form-group">-->

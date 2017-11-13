@@ -5,6 +5,7 @@ import {ElementsComponent} from '../elements/elements.component';
 import {MyCartComponent} from '../my-cart/my-cart.component';
 import {TeamsComponent} from '../gaming/teams/teams.component';
 import {TwitterComponent} from '../shared/twitter/twitter.component';
+import {PlayersComponent} from '../gaming/players/players.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -12,10 +13,13 @@ const appRoutes: Routes = [
   { path: 'gohome', redirectTo: '' },
   { path: 'elements', component: ElementsComponent },
   { path: 'my-cart', component: MyCartComponent },
-  { path: 'teams/dota2/rankings', component: TeamsComponent, children: [
+  { path: 'pro-teams/dota2/rankings', component: TeamsComponent, children: [
     { path: '', component: TwitterComponent },
-    // { path: '', component: TwitterComponent, data: [{isFirst: true}] },
-    { path: 'map/:id', component: TwitterComponent }
+    { path: ':twitter', component: TwitterComponent }
+  ] },
+  { path: 'pro-players/dota2/rankings', component: PlayersComponent, children: [
+    { path: '', component: TwitterComponent },
+    { path: ':twitter', component: TwitterComponent }
   ] },
   { path: '**', redirectTo: ''}
   // { path: 'elements', component: ElementsComponent, children: [

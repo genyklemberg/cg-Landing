@@ -7,6 +7,7 @@ import { HttpModule } from '@angular/http';
 import { Ng4TwitterTimelineModule } from 'ng4-twitter-timeline/src/index';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 
 import { AppRoutingModule } from './routes/routes.module';
 
@@ -26,6 +27,7 @@ import {TeamsService} from './services/teams.service';
 
 import { config } from './config/firebase.config';
 import { FbLikeBtnComponent } from './shared/fb-like-btn/fb-like-btn.component';
+import { PlayersComponent } from './gaming/players/players.component';
 
 const firebaseConfig = config;
 
@@ -45,6 +47,7 @@ const firebaseConfig = config;
     TeamsComponent,
     TwitterComponent,
     FbLikeBtnComponent,
+    PlayersComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'ng-landing'}),
@@ -53,6 +56,7 @@ const firebaseConfig = config;
     HttpModule,
     BrowserAnimationsModule,
     Ng4TwitterTimelineModule,
+    ScrollToModule.forRoot(),
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule

@@ -30,7 +30,7 @@
               </form>
             </div>
           </div>
-          <a href="#about" class="btn btn-circle page-scroll">
+          <a [ngx-scroll-to]="'about'" class="btn btn-circle page-scroll">
             <i class="fa fa-angle-double-down animated"></i>
           </a>
         </div>
@@ -118,12 +118,39 @@
   <div class="download-section">
     <div class="container">
       <div class="col-lg-8 col-lg-offset-2">
-        <h2>You are playing <span class="light brand-logo">CS, Dota 2, LoL</span> or maybe you are a true fan of <span class="light brand-logo">Blizzard</span> games?</h2>
+        <!--<h2>You are playing <span class="light brand-logo">CS, Dota 2, LoL</span> or maybe you are a true fan of <span class="light brand-logo">Blizzard</span> games?</h2>-->
+        <h2>Features to come:</h2>
         <div class='linked'>
-          <button
-            routerLink="/teams/dota2/rankings"
-            class="btn btn-color btn-invite"
-          >Enjoy Dota2 for now:)</button>
+          <div class='col col-lg-3'>
+            <button
+              routerLink="/pro-teams/dota2/rankings"
+              class="btn btn-color btn-invite"
+            >Dota2 Teams
+            </button>
+          </div>
+          <div class='col col-lg-3'>
+            <button
+              routerLink="/pro-players/dota2/rankings/Liquid_Miracle"
+              class="btn btn-color btn-invite"
+            >Dota2 Players
+            </button>
+          </div>
+          <div class='col col-lg-3'>
+            <button
+              routerLink="/pro-teams/dota2/rankings"
+              class="btn btn-color btn-invite"
+              disabled
+            >LoL Teams
+            </button>
+          </div>
+          <div class='col col-lg-3'>
+            <button
+              routerLink="/pro-teams/dota2/rankings"
+              class="btn btn-color btn-invite"
+              disabled
+            >LoL Players
+            </button>
+          </div>
         </div>
 
 
@@ -157,7 +184,9 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-lg-7">
+    <div class="col-lg-5">
+      <!--<div class="fb-like" data-href="https://www.facebook.com/cybergates.gg/" data-width="350" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>-->
+      <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fcybergates.gg%2F&width=350&layout=standard&action=like&size=large&show_faces=true&share=true&height=80&appId=358533844571978" width="100%" height="80px" style="overflow:hidden;border-radius:5px;background-color:white;opacity:0.9;padding:5px 25px 0 25px;" scrolling="no" frameborder="0" allowTransparency="false"></iframe>
       <!-- <ul class="list-inline banner-social-buttons">
           <li>
               <a href="https://www.facebook.com/groups/397248613959168" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
@@ -173,7 +202,7 @@
           </li>
       </ul>  -->
     </div>
-    <div class="col-lg-5">
+    <div class="col-lg-5 col-md-offset-2">
       <app-twitter></app-twitter>
     </div>
   </div>

@@ -1,6 +1,5 @@
 <div id="twtl" *ngIf='showTw'>
-  <p *ngIf='isFirst' >Select your team</p>
-  <ng4-twitter-timeline  [dataSrc]="{sourceType: 'profile', screenName: selectedTeam.twitter}"
+  <ng4-twitter-timeline  [dataSrc]="{sourceType: 'profile', screenName: selectedTwitter}"
                          [opts]="{
                                   height: '600',
                                   theme: 'dark',

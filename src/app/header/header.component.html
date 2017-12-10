@@ -21,11 +21,11 @@
         <li *ngIf="router.url === '/'">
           <a class="page-scroll" [ngx-scroll-to]="'about'">About</a>
         </li>
+        <!--<li *ngIf="router.url === '/'">-->
+          <!--<a class="page-scroll" [ngx-scroll-to]="'download'">Invitation</a>-->
+        <!--</li>-->
         <li *ngIf="router.url === '/'">
-          <a class="page-scroll" [ngx-scroll-to]="'download'">Invitation</a>
-        </li>
-        <li *ngIf="router.url === '/'">
-          <a class="page-scroll" [ngx-scroll-to]="'contact'">Contact</a>
+          <a class="page-scroll" [ngx-scroll-to]="'contact'">Contacts</a>
         </li>
         <!--<li routerLinkActive='active' ><a routerLink="/pro-teams/dota2/rankings/TeamLiquid">Dota2</a></li>-->
         <li class="dropdown" appDropdown>

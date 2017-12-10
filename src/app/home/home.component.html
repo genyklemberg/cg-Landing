@@ -11,7 +11,7 @@
             </div>
             <div [@myAwesomeAnimation]='state'>
               <form *ngIf='!submitted' [formGroup]='subscribeForm' (ngSubmit)='onSubmit(subscribeForm.value)'>
-                <em class="form-control" id="form-label">Join our beta list, launching soon.</em>
+                <em class="form-control" id="form-label">Join our beta list, launching JAN 2018.</em>
                 <label class="sr-only" for="name">Name</label>
                 <input type="name" formControlName='name' id="name" name="name" placeholder="Name" class="form-control">
                 <span class="form-control"
@@ -45,68 +45,90 @@
     <h2 class="page-header">Looking for something special?</h2>
   </div>
 
-  <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+  <div class="col-lg-4 col-md-4 col-xs-12 thumb">
+    <div class="hovereffect">
+      <div class="img-div img2">
+        <!--<i class="fa fa-check-square-o" aria-hidden="true" style='font-size: 55px; color: green'></i>-->
+      </div>
+      <div class="overlay">
+        <h3><a>Favourite players and teams</a></h3>
+        <!--<p>-->
+          <!--Find and follow your favorite players and teams-->
+        <!--</p>-->
+        <div>
+          <button
+            routerLink="/pro-teams/dota2/rankings"
+            class="btn btn-color btn-invite"
+          >Dota2 Teams
+          </button>
+        </div>
+        <div>
+          <button
+            routerLink="/pro-players/dota2/rankings/Liquid_Miracle"
+            class="btn btn-color btn-invite"
+          >Dota2 Players
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4 col-md-4 col-xs-12 thumb">
     <div class="hovereffect">
       <div class="img-div img1"></div>
       <div class="overlay">
         <h3><a>Team crafting</a></h3>
-        <p>
-          We designed to be outstanding in making gaming connections
+        <p style='color: lightgreen'>
+          <!--We designed to be outstanding in making gaming connections-->
+          Ready! Register for our beta-version to try;)
         </p>
       </div>
     </div>
   </div>
-  <div class="col-lg-4 col-md-4 col-xs-6 thumb">
-    <div class="hovereffect">
-      <div class="img-div img2"></div>
-      <div class="overlay">
-        <h3><a>Pro team fan pages</a></h3>
-        <p>
-          Find and follow your favorite players and teams
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+  <div class="col-lg-4 col-md-4 col-xs-12 thumb">
     <div class="hovereffect">
       <div class="img-div img3"></div>
       <div class="overlay">
         <h3><a>"How to" gaming wiki</a></h3>
-        <p>
-          Find all info you need: search, create, store & share guides and articles
+        <p style='color: cornflowerblue'>
+          <!--Find all info you need: search, create, store & share guides and articles-->
+          Coming soon...
         </p>
       </div>
     </div>
   </div>
-  <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+  <div class="col-lg-4 col-md-4 col-xs-12 thumb">
     <div class="hovereffect">
       <div class="img-div img4"></div>
       <div class="overlay">
         <h3><a>E-sports events</a></h3>
-        <p>
-          Be aware of Dota 2, CS, LoL tournaments, matches, activities and many more
+        <p style='color: lightgreen'>
+          <!--Be aware of interesting tournaments, matches, activities and many more-->
+          Ready! Register for our beta-version to try;)
         </p>
       </div>
     </div>
   </div>
-  <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+  <div class="col-lg-4 col-md-4 col-xs-12 thumb">
     <div class="hovereffect">
       <div class="img-div img5"></div>
       <div class="overlay">
         <h3><a>Battle and earn money</a></h3>
-        <p>
-          Take part in sponsored & custom tournaments with different prize pool
+        <p style='color: cornflowerblue'>
+          <!--Take part in sponsored & custom tournaments with different prize pools-->
+          Prepairing for APR 2018
         </p>
       </div>
     </div>
   </div>
-  <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+  <div class="col-lg-4 col-md-4 col-xs-12 thumb">
     <div class="hovereffect">
       <div class="img-div img6"></div>
       <div class="overlay">
         <h3><a>Track your progress</a></h3>
-        <p>
-          Learn more to become better and track your progress with custom made stats
+        <p style='color: cornflowerblue'>
+          <!--Learn more to become better and track your progress with custom made stats-->
+          Prepairing for JUL 2018
         </p>
       </div>
     </div>
@@ -114,44 +136,44 @@
 </section>
 
 <!-- Download Section -->
-<section id="download" class="content-section text-center">
-  <div class="download-section">
-    <div class="container">
-      <div class="col-lg-8 col-lg-offset-2">
-        <!--<h2>You are playing <span class="light brand-logo">CS, Dota 2, LoL</span> or maybe you are a true fan of <span class="light brand-logo">Blizzard</span> games?</h2>-->
-        <h2><span class="brand-logo">Features to come:</span></h2>
-        <div class='linked'>
-          <div class='col col-lg-3'>
-            <button
-              routerLink="/pro-teams/dota2/rankings"
-              class="btn btn-color btn-invite"
-            >Dota2 Teams
-            </button>
-          </div>
-          <div class='col col-lg-3'>
-            <button
-              routerLink="/pro-players/dota2/rankings/Liquid_Miracle"
-              class="btn btn-color btn-invite"
-            >Dota2 Players
-            </button>
-          </div>
-          <div class='col col-lg-3'>
-            <button
-              routerLink="/pro-teams/dota2/rankings"
-              class="btn btn-color btn-invite"
-              disabled
-            >LoL Teams
-            </button>
-          </div>
-          <div class='col col-lg-3'>
-            <button
-              routerLink="/pro-teams/dota2/rankings"
-              class="btn btn-color btn-invite"
-              disabled
-            >LoL Players
-            </button>
-          </div>
-        </div>
+<!--<section id="download" class="content-section text-center">-->
+  <!--<div class="download-section">-->
+    <!--<div class="container">-->
+      <!--<div class="col-lg-8 col-lg-offset-2">-->
+        <!--&lt;!&ndash;<h2>You are playing <span class="light brand-logo">CS, Dota 2, LoL</span> or maybe you are a true fan of <span class="light brand-logo">Blizzard</span> games?</h2>&ndash;&gt;-->
+        <!--<h2><span class="brand-logo">Features to come:</span></h2>-->
+        <!--<div class='linked'>-->
+          <!--<div class='col col-lg-3'>-->
+            <!--<button-->
+              <!--routerLink="/pro-teams/dota2/rankings"-->
+              <!--class="btn btn-color btn-invite"-->
+            <!--&gt;Dota2 Teams-->
+            <!--</button>-->
+          <!--</div>-->
+          <!--<div class='col col-lg-3'>-->
+            <!--<button-->
+              <!--routerLink="/pro-players/dota2/rankings/Liquid_Miracle"-->
+              <!--class="btn btn-color btn-invite"-->
+            <!--&gt;Dota2 Players-->
+            <!--</button>-->
+          <!--</div>-->
+          <!--<div class='col col-lg-3'>-->
+            <!--<button-->
+              <!--routerLink="/pro-teams/dota2/rankings"-->
+              <!--class="btn btn-color btn-invite"-->
+              <!--disabled-->
+            <!--&gt;Search players to play with-->
+            <!--</button>-->
+          <!--</div>-->
+          <!--<div class='col col-lg-3'>-->
+            <!--<button-->
+              <!--routerLink="/pro-teams/dota2/rankings"-->
+              <!--class="btn btn-color btn-invite"-->
+              <!--disabled-->
+            <!--&gt;Guides search made easy-->
+            <!--</button>-->
+          <!--</div>-->
+        <!--</div>-->
 
 
         <!--<form id="form" class="form-email" action="" method="post" data-position="main">-->
@@ -166,10 +188,10 @@
             <!--</div>-->
           <!--</div>-->
         <!--</form>-->
-      </div>
-    </div>
-  </div>
-</section>
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</section>-->
 
 <!-- Contact Section -->
 <section id="contact" class="container content-section text-center">

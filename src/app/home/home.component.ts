@@ -1,9 +1,9 @@
-import { Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {AngularFireDatabase} from 'angularfire2/database';
 import {SubscriberService} from '../services/subscriber.service';
 import {User} from '../shared/user';
-import { trigger, state, style, transition, animate} from '@angular/animations';
+import {trigger, state, style, transition, animate, keyframes} from '@angular/animations';
 import {Meta, Title} from '@angular/platform-browser';
 
 @Component({
@@ -21,10 +21,11 @@ import {Meta, Title} from '@angular/platform-browser';
       })),
       transition('show => hide', animate('1000ms ease-in'
       )),
-    ]),
+    ])
   ]
 })
 export class HomeComponent implements OnInit {
+  puls;
   user: User;
   newUser = this._resetNewUserObj();
   subscribeForm: FormGroup;
@@ -82,6 +83,14 @@ export class HomeComponent implements OnInit {
       'email': new FormControl(null, [Validators.required, Validators.email]),
       'message': new FormControl(null)
     });
+      // setInterval(function(){
+      //   const that = this;
+      //   this.state = 'light';
+      //   setTimeout(function(){
+      //     that.state = 'dark';
+      //   }, 500);
+      // }, 1000);
+
   }
 
   addUser (name, email, message, date){
@@ -98,8 +107,8 @@ export class HomeComponent implements OnInit {
     this.newUser = this._resetNewUserObj();
   }
 
-  private _resetNewUserObj(){
-    let user: User = {
+  private _resetNewUserObj() {
+    const user: User = {
       name: '',
       email: '',
       message: '',
@@ -109,7 +118,7 @@ export class HomeComponent implements OnInit {
   }
 
   onSubmit(value) {
-    let that = this;
+    const that = this;
     if ( this.subscribeForm.get('name').valid && this.subscribeForm.get('email').valid) {
       this.name = value.name;
       this.email = value.email;

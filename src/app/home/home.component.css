@@ -1,0 +1,10 @@
+.frame {
+  margin-left: 10%;
+  padding: 0;
+}
+
+@media (max-width: 450px) {
+  .frame {
+    margin-left: -50px;
+  }
+}

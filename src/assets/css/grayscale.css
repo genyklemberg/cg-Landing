@@ -271,6 +271,10 @@ th {
     text-align: center;
 }
 
+td {
+  height: 40px;
+}
+
 td img {
     width: 35px;
     height: auto;
@@ -320,7 +324,7 @@ body::-webkit-scrollbar-thumb {
 @font-face {
   font-family: 'Montalban';
   /*src: url('../fonts/airborne/airborne.ttf');*/
-  src: url('../fonts/ml/Montalban Condensed.otf');
+  src: url('../fonts/ml/MontalbanCondensed.otf');
 }
 
 .brand-logo {
